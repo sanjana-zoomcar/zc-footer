@@ -1,28 +1,47 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  
+  <div style="padding:0;">
+    <navBar :index="index"></navBar>
+    
+    <footerBar></footerBar>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
+import navBar from './components/navBar.vue';
+import footerBar from './components/footerBar.vue';
+//import infoPage from './components/infoPage.vue'
+export default{
+  name:'App',
+  components:{
+    navBar,
+    footerBar
+    
+  },
+  data(){
+    return{ index : 1}
+   
   }
-}
+  ,
+  methods: {
+    F1(){
+        this.index=1;
+        console.log(this.index);
+    },
+    F2(){
+        this.index=2
+    },
+    F3(){
+        this.index=3
+    },
+    F4(){
+        this.index=4
+    }
+  }
+};
 </script>
-
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+body{
+  margin:0px;
 }
 </style>
